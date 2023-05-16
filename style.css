@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Fraunces:wght@700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+:root{
+
+    /* ### Primary */
+
+        --soft-red: hsl(7, 99%, 70%);
+        --soft-red-light: 7 99% 70%;
+        --yellow: hsl(51, 100%, 49%);
+        --yellow-light: 51 100% 49%;
+        --blue:hsl(200, 100%, 62%);
+        --dark-desaturated-cyan: hsl(167, 40%, 24%);
+        --dark-blue: hsl(198, 62%, 26%);
+        --dark-moderate-cyan: hsl(168, 34%, 41%);
+        --light-moderate-cyan: 166 44% 70%;
+
+        /* hsl(166, 44%, 70%) */
+
+    /* ### Neutral */
+
+        --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+        --very-dark-grayish-blue: hsl(213, 9%, 39%);
+        --dark-grayish-blue: hsl(232, 10%, 55%);
+        --grayish-blue: hsl(210, 4%, 67%);
+        --white: hsl(0, 0%, 100%);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--blue);
+    padding: 3rem;
+}
+
+ p{
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: var(--dark-grayish-blue);
+    margin-bottom: 2rem;
+}
+
+h2{
+    font-family: 'Fraunces', serif;
+}
+
+header .logo{
+    width: 10rem;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.menu ul{
+    display: flex;
+    gap: 2.8rem;
+    margin: 0;
+}
+
+.menu ul li{
+    list-style: none;
+    font-family: 'Barlow', sans-serif;
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+
+.menu ul li.cta{
+    background-color: var(--white);
+    color: var(--dark-blue);
+    font-family: 'Fraunces', serif;
+    border-radius: 3rem;
+    padding: 1rem 1.75rem;
+    margin-top: -0.65rem;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+section.intro{
+    background-image: url('images/desktop/image-header.jpg');
+    min-height: 30rem;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+section.intro h1{
+    color: var(--white);
+    font-size: 3.5rem;
+    font-family: 'Fraunces', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-top: 3rem;
+}
+
+section.intro .arrow{
+    margin-top: 4rem;
+}
+
+section.half-transform, section.half-standOut{
+    display: flex;
+    flex-direction: row;
+}
+
+section .half{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    padding: 2rem 3rem;
+    background-color: var(--white);
+}
+
+section .half h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+
+section .half button{
+    background: transparent;
+    border: 0px;
+    font-family: 'Fraunces', serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    width: clamp(7.5rem, 20vw, 8rem);
+    position: relative;
+    letter-spacing: 0.05rem;
+}
+
+section .half button::after{
+    content: '';
+    height: 8px;
+    width: 100%;
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    border-radius: 1rem;   
+}
+
+section .half button.transform::after{
+    background-color: hsl(var(--yellow-light) / .2);
+}
+
+section .half button.standOut::after{
+    background-color: hsl(var(--soft-red-light) / .2);
+}
+
+section.half-transform .right{
+    background-image: url('images/desktop/image-transform.jpg');
+    background-position: center;
+    background-size: cover;
+    height: clamp(22rem, 50vw, 30rem);
+}
+
+section.half-standOut .left{
+    background-image: url('images/desktop/image-stand-out.jpg');
+    background-position: center;
+    background-size: cover;
+    height: clamp(22rem, 50vw, 30rem);
+}
+
+section.lower{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background-color: var(--white);
+}
+
+section.lower .graphic-design, section.lower .photography{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20rem clamp(3rem, 5vw, 8rem) 0;
+}
+
+section.lower .graphic-design{
+    background: url('images/desktop/image-graphic-design.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+section.lower .photography{
+    background: url('images/desktop/image-photography.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+section.lower .graphic-design h2{
+    margin: 4rem 4rem 1.5rem;
+    color: var(--dark-desaturated-cyan);
+}
+
+section.lower .photography h2{
+    margin: 4rem 4rem 1.5rem;
+    color: var(--dark-blue);
+}
+
+section.lower .graphic-design p{
+    color: var(--dark-desaturated-cyan);
+}
+
+section.lower .photography p{
+    color: var(--dark-blue);
+}
+
+.section.testimonials{
+    background-color: var(--white);
+    padding: 7rem 3rem;
+    text-align: center;
+}
+
+.section.testimonials img{
+    width: 4rem;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+}
+
+.section.testimonials h1{
+    font-family: 'Fraunces', serif;
+    margin-bottom: 3rem;
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-size: 1.25rem;
+}
+
+.section.testimonials h3{
+    font-family: 'Fraunces', serif;
+    color: var(--very-dark-desaturated-blue);
+    margin-bottom: 1.25rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.section.testimonials p{
+    color: var(--very-dark-grayish-blue);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 2rem;
+    margin-bottom: 4rem;
+}
+
+.three-col{
+    display: flex;
+    gap: 1.75rem;
+}
+
+.section.testimonials small{
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.93rem;
+    color: var(--grayish-blue);
+    font-weight: 600;
+}
+
+/* Gallery */
+
+section.gallery{
+    height: 28rem;
+    display: flex;
+    
+}
+
+.gallery-image-1{
+    background:url(images/desktop/image-gallery-milkbottles.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.gallery-image-2{
+    background:url(images/desktop/image-gallery-orange.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.gallery-image-3{
+    background:url(images/desktop/image-gallery-cone.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.gallery-image-4{
+    background:url(images/desktop/image-gallery-sugarcubes.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--light-moderate-cyan));
+    padding: 4rem;
+}
+
+footer .logo-footer img{
+    width: 10rem;
+    opacity: 70%;
+}
+
+footer nav ul{
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+    width: 100%; 
+}
+
+footer nav li{
+    list-style: none;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--dark-desaturated-cyan);
+    opacity: 60%;
+}
