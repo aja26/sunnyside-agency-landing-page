@@ -37,9 +37,14 @@ body{
     align-items: center;
 }
 
+body.active{
+    overflow: hidden;
+}
+
 main{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 header{
@@ -70,21 +75,23 @@ header .logo{
     display: none;
 }
 
-.menu ul{
+
+nav ul{
     display: flex;
     gap: 2.8rem;
     margin: 0;
 }
 
-.menu ul li{
+nav ul li{
     list-style: none;
     font-family: 'Barlow', sans-serif;
     color: var(--white);
     font-size: 1.15rem;
     font-weight: 400;
+    cursor: pointer;
 }
 
-.menu ul li.cta{
+nav ul li.cta{
     background-color: var(--white);
     color: var(--dark-blue);
     font-family: 'Fraunces', serif;
@@ -146,6 +153,7 @@ section .half button{
     width: clamp(7.5rem, 20vw, 8rem);
     position: relative;
     letter-spacing: 0.05rem;
+    cursor: pointer;
 }
 
 section .half button::after{
@@ -353,4 +361,107 @@ footer nav li{
     font-weight: 600;
     color: var(--dark-desaturated-cyan);
     opacity: 60%;
+}
+
+footer .social{
+    margin-top: 4rem;
+    display: flex;
+    gap: 2.5rem;
+}
+
+/* Mobile */
+
+@media screen and (max-width:800px){
+    header .logo{
+        width: 8rem;
+    }
+
+    .mobile-menu{
+        display: flex;
+        cursor: pointer;
+        background-image: url('images/icon-hamburger.svg');
+        background-size: cover;
+        background-position: center;
+        width: 1.5rem;
+        height: 1.15rem;
+        margin-top: 0.25rem;
+    }
+
+    .mobile-menu.active{
+        background-image: url('images/icon-close.svg');
+        z-index: 3;
+    }
+
+    .mobile-menu img{
+        height: 1.2rem;
+    }
+
+    nav.menu{
+        display: none;
+    }
+    
+    nav.menu.active{
+        display: flex;
+        background-color: var(--white);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        padding: 3rem 2rem;
+        overflow: hidden;
+    }
+
+    nav.menu.active ul{
+        flex-direction: column;
+   
+    }
+
+    nav.menu.active ul li{
+        color: var(--dark-blue);
+    }
+
+    header{
+        padding: 2rem 1.5rem;
+    }
+
+    section p, section .half h2 {
+        text-align: center;
+    }
+
+    section.intro{
+        min-height: 28rem;
+    }
+    
+    section.intro h1 {
+        font-size: 2.5rem;
+        padding: 0 2rem;
+    }
+
+    section.half-transform{
+        flex-direction: column-reverse;
+    }
+
+    section.half-transform .right{
+        background-image: url('images/mobile/image-transform.jpg');
+    }
+
+     section.half-standOut{
+        flex-direction: column;
+    }
+
+    section .half{
+        width: 100%;
+        align-items: center;
+    }
+
+    section.lower, .three-col{
+        flex-direction: column;
+    }
+
+    section.lower .graphic-design, section.lower .photography {
+        width: 100%;
+    }
+
 }
