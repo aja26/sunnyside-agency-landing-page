@@ -565,7 +565,7 @@ svg:hover path {
         background: url('images/mobile/image-graphic-design.jpg');
         background-position: center top;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: cover;
         background-color: #9CDCCC;
         padding: 22rem 3rem 3rem; 
         
@@ -575,7 +575,7 @@ svg:hover path {
         background: url('images/mobile/image-photography.jpg');
         background-position: center top;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: cover;
         background-color: #5fccff;
         padding: 22rem 3rem 3rem; 
     }
